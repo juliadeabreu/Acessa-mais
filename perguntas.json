@@ -1,0 +1,372 @@
+{
+  "config": {
+    "pesoPerfilCorrespondente": 2,
+    "pesoOutros": 1,
+    "faixas": [
+      {
+        "min": 75,
+        "rotulo": "Boa acessibilidade"
+      },
+      {
+        "min": 40,
+        "rotulo": "Acessibilidade parcial"
+      },
+      {
+        "min": 0,
+        "rotulo": "Muitas barreiras"
+      }
+    ],
+    "minAvaliacoesConfiavel": 3
+  },
+  "perfis": [
+    {
+      "id": "tea",
+      "nome": "TEA / neurodivergência",
+      "descricao": "Ruído, luz, lotação, previsibilidade e espaço de autorregulação."
+    },
+    {
+      "id": "surdez",
+      "nome": "Surdez / Libras",
+      "descricao": "Libras, comunicação escrita, legendas e avisos visuais."
+    },
+    {
+      "id": "mobilidade",
+      "nome": "Mobilidade reduzida / cadeirante",
+      "descricao": "Entrada, circulação, banheiro, assentos e calçada."
+    }
+  ],
+  "tiposResposta": {
+    "sim_parcial_nao": [
+      {
+        "rotulo": "Sim",
+        "valor": 1
+      },
+      {
+        "rotulo": "Parcial",
+        "valor": 0.5
+      },
+      {
+        "rotulo": "Não",
+        "valor": 0
+      },
+      {
+        "rotulo": "Não sei",
+        "valor": null
+      }
+    ],
+    "sim_parcial_nao_na": [
+      {
+        "rotulo": "Sim",
+        "valor": 1
+      },
+      {
+        "rotulo": "Parcial",
+        "valor": 0.5
+      },
+      {
+        "rotulo": "Não",
+        "valor": 0
+      },
+      {
+        "rotulo": "Não sei",
+        "valor": null
+      },
+      {
+        "rotulo": "Não se aplica",
+        "valor": null
+      }
+    ],
+    "nivel_estimulo": [
+      {
+        "rotulo": "Baixo",
+        "valor": 1
+      },
+      {
+        "rotulo": "Médio",
+        "valor": 0.5
+      },
+      {
+        "rotulo": "Alto",
+        "valor": 0
+      },
+      {
+        "rotulo": "Não sei",
+        "valor": null
+      }
+    ],
+    "suave_media_forte": [
+      {
+        "rotulo": "Suave",
+        "valor": 1
+      },
+      {
+        "rotulo": "Média",
+        "valor": 0.5
+      },
+      {
+        "rotulo": "Forte",
+        "valor": 0
+      },
+      {
+        "rotulo": "Não sei",
+        "valor": null
+      }
+    ],
+    "nao_as_vezes_sim": [
+      {
+        "rotulo": "Não",
+        "valor": 1
+      },
+      {
+        "rotulo": "Às vezes",
+        "valor": 0.5
+      },
+      {
+        "rotulo": "Sim",
+        "valor": 0
+      },
+      {
+        "rotulo": "Não sei",
+        "valor": null
+      }
+    ],
+    "nao_alguns_sim": [
+      {
+        "rotulo": "Não",
+        "valor": 1
+      },
+      {
+        "rotulo": "Alguns",
+        "valor": 0.5
+      },
+      {
+        "rotulo": "Sim",
+        "valor": 0
+      },
+      {
+        "rotulo": "Não sei",
+        "valor": null
+      }
+    ],
+    "sim_agendamento_nao": [
+      {
+        "rotulo": "Sim",
+        "valor": 1
+      },
+      {
+        "rotulo": "Sob agendamento",
+        "valor": 0.5
+      },
+      {
+        "rotulo": "Não",
+        "valor": 0
+      },
+      {
+        "rotulo": "Não sei",
+        "valor": null
+      }
+    ],
+    "voltaria": [
+      {
+        "rotulo": "Sim",
+        "valor": 1
+      },
+      {
+        "rotulo": "Talvez",
+        "valor": 0.5
+      },
+      {
+        "rotulo": "Não",
+        "valor": 0
+      }
+    ]
+  },
+  "perguntas": [
+    {
+      "id": "T1",
+      "perfil": "tea",
+      "texto": "Qual o nível de barulho no local?",
+      "tipo": "nivel_estimulo"
+    },
+    {
+      "id": "T2",
+      "perfil": "tea",
+      "texto": "Há música alta ou sons repentinos (liquidificador, secador de mãos, alarmes)?",
+      "tipo": "nao_as_vezes_sim"
+    },
+    {
+      "id": "T3",
+      "perfil": "tea",
+      "texto": "A iluminação é forte, fria ou piscante?",
+      "tipo": "suave_media_forte"
+    },
+    {
+      "id": "T4",
+      "perfil": "tea",
+      "texto": "Existe um espaço calmo para se autorregular?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "T5",
+      "perfil": "tea",
+      "texto": "O local costuma ficar lotado?",
+      "tipo": "nivel_estimulo"
+    },
+    {
+      "id": "T6",
+      "perfil": "tea",
+      "texto": "A equipe é paciente e flexível?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "T7",
+      "perfil": "tea",
+      "texto": "Há informação prévia clara (fotos, cardápio, como funciona)?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "T8",
+      "perfil": "tea",
+      "texto": "É fácil sair e voltar sem constrangimento?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "T9",
+      "perfil": "tea",
+      "texto": "Há cheiros fortes (cozinha, perfume, produtos de limpeza)?",
+      "tipo": "nao_alguns_sim"
+    },
+    {
+      "id": "T10",
+      "perfil": "tea",
+      "texto": "Existe horário mais tranquilo ou atendimento prioritário?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "S1",
+      "perfil": "surdez",
+      "texto": "Há atendimento em Libras?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "S2",
+      "perfil": "surdez",
+      "texto": "Há intérprete ou videochamada de Libras?",
+      "tipo": "sim_agendamento_nao"
+    },
+    {
+      "id": "S3",
+      "perfil": "surdez",
+      "texto": "A equipe aceita comunicação por escrito?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "S4",
+      "perfil": "surdez",
+      "texto": "Vídeos e TVs têm legenda?",
+      "tipo": "sim_parcial_nao_na"
+    },
+    {
+      "id": "S5",
+      "perfil": "surdez",
+      "texto": "Avisos importantes (senha, chamada, emergência) são visuais, e não só sonoros?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "S6",
+      "perfil": "surdez",
+      "texto": "A equipe parece treinada para atender pessoas surdas?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "S7",
+      "perfil": "surdez",
+      "texto": "Há informações escritas fáceis de consultar?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "S8",
+      "perfil": "surdez",
+      "texto": "O ambiente tem boa iluminação e visão do rosto de quem fala?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "S9",
+      "perfil": "surdez",
+      "texto": "Existe canal alternativo ao telefone (WhatsApp, chat, e-mail)?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "S10",
+      "perfil": "surdez",
+      "texto": "Há sinalização visual clara (placas, pictogramas) para se orientar sem precisar perguntar?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "M1",
+      "perfil": "mobilidade",
+      "texto": "A entrada é sem degraus ou tem rampa?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "M2",
+      "perfil": "mobilidade",
+      "texto": "A rampa parece segura (inclinação suave)?",
+      "tipo": "sim_parcial_nao_na"
+    },
+    {
+      "id": "M3",
+      "perfil": "mobilidade",
+      "texto": "Há elevador ou plataforma, se houver mais de um andar?",
+      "tipo": "sim_parcial_nao_na"
+    },
+    {
+      "id": "M4",
+      "perfil": "mobilidade",
+      "texto": "É possível circular dentro do local (entre mesas, corredores, prateleiras)?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "M5",
+      "perfil": "mobilidade",
+      "texto": "As portas são largas o bastante e fáceis de abrir?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "M6",
+      "perfil": "mobilidade",
+      "texto": "Há banheiro acessível (espaço para giro, barras de apoio, porta larga)?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "M7",
+      "perfil": "mobilidade",
+      "texto": "Há vaga reservada ou ponto de embarque próximo?",
+      "tipo": "sim_parcial_nao_na"
+    },
+    {
+      "id": "M8",
+      "perfil": "mobilidade",
+      "texto": "Há assentos preferenciais ou mesas adaptadas?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "M9",
+      "perfil": "mobilidade",
+      "texto": "Há cadeira de rodas auxiliar disponível no local?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "M10",
+      "perfil": "mobilidade",
+      "texto": "A calçada em frente é plana, com rebaixamento de guia?",
+      "tipo": "sim_parcial_nao"
+    }
+  ],
+  "perguntaFinal": {
+    "id": "V",
+    "texto": "Você voltaria a esse local?",
+    "tipo": "voltaria",
+    "entraNaNota": false
+  }
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acessa+ | Acessibilidade que cada pessoa define</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header>
+  <h1>Acessa+</h1>
+  <p>Acessibilidade que cada pessoa define</p>
+</header>
+<main id="conteudo">
+  <section id="tela-perfil" aria-labelledby="titulo-perfil">
+    <h2 id="titulo-perfil">Quais necessidades você quer considerar?</h2>
+    <p>Você pode marcar mais de uma. Elas definem os filtros que você vê e o peso das suas avaliações.</p>
+    <form id="form-perfil">
+            <fieldset class="dados-pessoais">
+        <legend>Sobre você (opcional)</legend>
+        <div class="campo">
+          <label for="campo-nome">Seu nome</label>
+          <input type="text" id="campo-nome" name="nome" autocomplete="name">
+        </div>
+        <div class="campo">
+          <label for="campo-idade">Sua idade</label>
+          <input type="number" id="campo-idade" name="idade" min="0" max="120">
+        </div>
+        <div class="campo checkbox">
+          <input type="checkbox" id="campo-anonimo" name="anonimo">
+          <label for="campo-anonimo">Deixar minha avaliação anônima</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Escolha seus perfis</legend>
+        <div id="lista-perfis" class="cards"></div>
+      </fieldset>
+      <button type="submit" class="botao">Continuar</button>
+    </form>
+  </section>
+
+<section
+  id="tela-resumo"
+  hidden
+  aria-labelledby="titulo-resumo"
+>
+  <h2 id="titulo-resumo">Qual local você quer avaliar?</h2>
+
+  <p>
+    Busque um estabelecimento e selecione o resultado
+    correspondente ao local que você visitou.
+  </p>
+
+  <p id="texto-resumo" class="resumo-perfis"></p>
+
+  <form id="form-busca-local" class="busca-local">
+    <label for="campo-busca-local">
+      Nome do estabelecimento e cidade
+    </label>
+
+    <p id="ajuda-busca">
+      Exemplo: Biblioteca Municipal de São Paulo.
+    </p>
+
+    <div class="linha-busca">
+      <input
+        id="campo-busca-local"
+        name="busca"
+        type="search"
+        placeholder="Digite um nome e a cidade"
+        aria-describedby="ajuda-busca"
+        required
+      >
+
+      <button
+        id="btn-buscar-local"
+        type="submit"
+        class="botao"
+        disabled
+      >
+        Buscar
+      </button>
+    </div>
+  </form>
+
+  <p id="status-mapa" role="status" aria-live="polite">
+    Preparando o mapa...
+  </p>
+
+  <div
+    id="area-mapa"
+    class="area-mapa"
+    aria-label="Mapa de estabelecimentos"
+  ></div>
+
+  <section
+    id="secao-resultados"
+    hidden
+    aria-labelledby="titulo-resultados"
+  >
+    <h3 id="titulo-resultados">Resultados da busca</h3>
+
+    <p>Confira o endereço antes de selecionar.</p>
+
+    <ul id="lista-resultados" class="lista-resultados"></ul>
+  </section>
+
+  <section
+    id="local-selecionado"
+    class="cartao-local"
+    hidden
+    aria-labelledby="nome-local"
+  >
+    <h3 id="nome-local"></h3>
+
+    <p id="endereco-local"></p>
+    <section aria-labelledby="titulo-resultados-local">
+  <h3 id="titulo-resultados-local">
+    Avaliações da comunidade
+  </h3>
+
+  <p class="aviso-prototipo">
+    Relatos de visitantes: não representam
+    certificação técnica de acessibilidade.
+  </p>
+
+  <div
+    id="resultados-comunidade"
+    aria-live="polite"
+  ></div>
+
+  <button
+    id="btn-atualizar-avaliacoes"
+    type="button"
+    class="botao secundario"
+  >
+    Atualizar avaliações
+  </button>
+</section>
+
+<div class="campo-avaliacao">
+  <label for="perfil-avaliacao">
+    Qual área você quer avaliar?
+  </label>
+
+  <p id="ajuda-perfil-avaliacao">
+    Você pode avaliar qualquer área, mesmo que não tenha
+    selecionado esse perfil no cadastro.
+  </p>
+
+  <select
+    id="perfil-avaliacao"
+    aria-describedby="ajuda-perfil-avaliacao"
+  >
+    <option value="">Selecione uma área</option>
+    <option value="tea">TEA / neurodivergência</option>
+    <option value="surdez">Surdez / Libras</option>
+    <option value="mobilidade">
+      Mobilidade reduzida / cadeirante
+    </option>
+  </select>
+</div>
+
+<form id="form-avaliacao" hidden>
+  <fieldset>
+    <legend id="titulo-perguntas-avaliacao">
+      Perguntas de avaliação
+    </legend>
+
+    <p>
+      Responda conforme sua experiência.
+      Se não souber, escolha “Não sei”.
+    </p>
+
+    <div id="perguntas-avaliacao"></div>
+  </fieldset>
+
+<fieldset class="pergunta-opcoes">
+  <legend>Você voltaria a esse local?</legend>
+
+  <div class="linha-opcoes">
+    <label class="opcao-resposta">
+      <input
+        type="radio"
+        name="voltaria"
+        value="Sim"
+        required
+      >
+      <span>Sim</span>
+    </label>
+
+    <label class="opcao-resposta">
+      <input
+        type="radio"
+        name="voltaria"
+        value="Talvez"
+        required
+      >
+      <span>Talvez</span>
+    </label>
+
+    <label class="opcao-resposta">
+      <input
+        type="radio"
+        name="voltaria"
+        value="Não"
+        required
+      >
+      <span>Não</span>
+    </label>
+  </div>
+</fieldset>
+
+  <p id="info-autoria-avaliacao"></p>
+
+  <p class="aviso-prototipo">
+    Ao salvar, suas respostas serão compartilhadas no banco público do projeto. Não enviaremos seu nome nem sua idade.
+  </p>
+
+  <button type="submit" class="botao">
+    Salvar avaliação
+  </button>
+</form>
+
+<p
+  id="mensagem-avaliacao"
+  role="status"
+  aria-live="polite"
+></p>
+  </section>
+
+  <button
+    id="btn-editar"
+    class="botao secundario"
+    type="button"
+  >
+    Alterar meus dados e perfis
+  </button>
+</section>
+  </main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="banco.js"></script>
+<script src="maps.js"></script>
+<script src="script.js"></script>
+<script src="avaliacao.js"></script>
+</body>
+</html>
