@@ -67,6 +67,7 @@ function carregarGoogleMaps() {
 // Limpa a seleção quando uma nova busca começa.
 function limparSelecaoLocal() {
   window.localSelecionadoAcessa = null;
+  window.dispatchEvent(new Event("acessa:local-alterado"));
 
   document.getElementById("local-selecionado").hidden = true;
 
@@ -93,6 +94,7 @@ function selecionarLocal(local) {
     latitude: local.location.lat(),
     longitude: local.location.lng()
   };
+  window.dispatchEvent(new Event("acessa:local-alterado"));
 
   document.getElementById("nome-local").textContent =
     window.localSelecionadoAcessa.nome;

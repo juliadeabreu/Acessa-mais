@@ -36,7 +36,7 @@
         <legend>Escolha seus perfis</legend>
         <div id="lista-perfis" class="cards"></div>
       </fieldset>
-      <button type="submit" class="botao">
+<button type="submit" class="botao">
   Continuar
 </button>
 
@@ -149,6 +149,26 @@
   </button>
 </section>
 
+
+<section id="assistente-acessa" aria-labelledby="titulo-assistente">
+  <h3 id="titulo-assistente">Pergunte ao assistente Acessa+</h3>
+  <p>O assistente resume as avaliações disponíveis neste projeto. Não consulta avaliações do Google Maps.</p>
+  <form id="form-assistente">
+    <label for="pergunta-assistente">O que você quer saber sobre este local?</label>
+    <textarea id="pergunta-assistente" rows="3" maxlength="1000" required
+      placeholder="Ex.: o que sabemos sobre entrada e banheiro acessível?"
+      style="display:block;width:100%;box-sizing:border-box;margin:10px 0"></textarea>
+    <button id="btn-assistente" type="submit" class="botao">Perguntar ao assistente</button>
+  </form>
+  <p id="status-assistente" role="status" aria-live="polite"></p>
+  <div id="resposta-assistente" style="white-space:pre-wrap"></div>
+  <details id="detalhes-fontes-assistente" hidden>
+    <summary>Avaliações consultadas</summary>
+    <ul id="fontes-assistente"></ul>
+  </details>
+  <p class="aviso-prototipo">Resumo gerado por IA com base em relatos da comunidade. Não representa uma vistoria de acessibilidade. Confira os dados e considere suas necessidades individuais.</p>
+</section>
+
 <div class="campo-avaliacao">
   <label for="perfil-avaliacao">
     Qual área você quer avaliar?
@@ -254,5 +274,6 @@
 <script src="maps.js"></script>
 <script src="script.js"></script>
 <script src="avaliacao.js"></script>
+<script src="ia.js"></script>
 </body>
 </html>
