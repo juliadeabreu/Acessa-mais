@@ -371,3 +371,47 @@ li small { color: #555; }
 #resultados-comunidade {
   margin-bottom: 1rem;
 }
+/* Espaçamento da seção do assistente */
+#assistente-acessa {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #dce4e8;
+}
+
+#titulo-assistente {
+  margin: 0 0 16px;
+}
+
+#assistente-acessa > p {
+  line-height: 1.6;
+}
+
+#form-assistente label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Campo de pergunta com a mesma fonte do site */
+#pergunta-assistente {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  color: inherit;
+  background-color: #fff;
+
+  min-height: 90px;
+  padding: 12px 14px;
+
+  border: 1px solid #a8bac5;
+  border-radius: 10px;
+
+  resize: vertical;
+}
+
+#pergunta-assistente::placeholder {
+  color: #637581;
+}
+
+#pergunta-assistente:focus {
+  outline: 3px s

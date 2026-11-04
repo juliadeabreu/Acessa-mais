@@ -1,6 +1,26 @@
 (() => {
 const form = document.getElementById("form-assistente");
 const campo = document.getElementById("pergunta-assistente");
+campo.addEventListener("keydown", (evento) => {
+  if (
+    evento.key === "Enter" &&
+    !evento.shiftKey &&
+    !evento.isComposing
+  ) {
+    evento.preventDefault();
+
+    const formulario = campo.form;
+    const botaoEnviar = document.getElementById("btn-assistente");
+
+    if (
+      formulario &&
+      !botaoEnviar.disabled &&
+      campo.value.trim()
+    ) {
+      formulario.requestSubmit();
+    }
+  }
+});
 const botao = document.getElementById("btn-assistente");
 const status = document.getElementById("status-assistente");
 const resposta = document.getElementById("resposta-assistente");
