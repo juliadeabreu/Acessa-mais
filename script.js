@@ -15,8 +15,12 @@ function perfisSalvos() {
 
 function renderPerfis() {
   const salvos = perfisSalvos();
+  const jaEscolheu = localStorage.getItem(CHAVE) !== null;
+  const nenhumMarcado = jaEscolheu && salvos.length === 0;
+
   const alvo = document.getElementById("lista-perfis");
   alvo.innerHTML = "";
+
   DADOS.perfis.forEach(p => {
     const label = document.createElement("label");
     label.className = "card";
@@ -27,6 +31,29 @@ function renderPerfis() {
       <span class="marca">✔ Selecionado</span>`;
     alvo.appendChild(label);
   });
+
+  const nenhum = document.createElement("label");
+  nenhum.className = "card";
+  nenhum.innerHTML = `
+    <input type="checkbox" id="perfil-nenhum" name="perfil-nenhum" ${nenhumMarcado ? "checked" : ""}>
+    <strong>Nenhuma dessas</strong>
+    <span>Vou contribuir como visitante, sem representar uma dessas necessidades.</span>
+    <span class="marca">✔ Selecionado</span>`;
+  alvo.appendChild(nenhum);
+
+  // "Nenhuma dessas" não pode ficar marcada junto com os outros perfis.
+  alvo.onchange = evento => {
+    const campo = evento.target;
+    const caixaNenhum = document.getElementById("perfil-nenhum");
+
+    if (campo.id === "perfil-nenhum" && campo.checked) {
+      alvo.querySelectorAll('input[name="perfil"]').forEach(i => { i.checked = false; });
+    } else if (campo.name === "perfil" && campo.checked) {
+      caixaNenhum.checked = false;
+    }
+
+    document.getElementById("erro-perfil").textContent = "";
+  };
 }
 
 function renderResumo() {
@@ -110,9 +137,46 @@ async function iniciar() {
     return;
   }
   renderPerfis();
+  document.getElementById("btn-sem-perfil").addEventListener(
+  "click",
+  () => {
+    // Desmarca qualquer perfil escolhido anteriormente.
+    document.querySelectorAll(
+      '#lista-perfis input[type="checkbox"]'
+    ).forEach(campo => {
+      campo.checked = false;
+    });
+
+    // Guarda uma lista vazia: nenhum perfil definido.
+    localStorage.setItem(CHAVE, JSON.stringify([]));
+
+    const usuario = {
+      nome: document.getElementById("campo-nome").value.trim(),
+      idade: document.getElementById("campo-idade").value,
+      anonimo: document.getElementById("campo-anonimo").checked
+    };
+
+    localStorage.setItem(
+      CHAVE_USUARIO,
+      JSON.stringify(usuario)
+    );
+
+    renderResumo();
+    mostrar("resumo");
+  }
+);
   document.getElementById("form-perfil").addEventListener("submit", e => {
     e.preventDefault();
+
     const marcados = [...document.querySelectorAll('input[name="perfil"]:checked')].map(i => i.value);
+    const nenhum = document.getElementById("perfil-nenhum").checked;
+
+    if (marcados.length === 0 && !nenhum) {
+      document.getElementById("erro-perfil").textContent =
+        "Escolha pelo menos uma opção para continuar.";
+      return;
+    }
+
     localStorage.setItem(CHAVE, JSON.stringify(marcados));
 
     const usuario = {

@@ -36,7 +36,17 @@
         <legend>Escolha seus perfis</legend>
         <div id="lista-perfis" class="cards"></div>
       </fieldset>
-      <button type="submit" class="botao">Continuar</button>
+      <button type="submit" class="botao">
+  Continuar
+</button>
+
+<button
+  type="button"
+  id="btn-sem-perfil"
+  class="botao secundario"
+>
+  Continuar sem definir um perfil
+</button>
     </form>
   </section>
 
@@ -153,12 +163,10 @@
     id="perfil-avaliacao"
     aria-describedby="ajuda-perfil-avaliacao"
   >
-    <option value="">Selecione uma área</option>
-    <option value="tea">TEA / neurodivergência</option>
-    <option value="surdez">Surdez / Libras</option>
-    <option value="mobilidade">
-      Mobilidade reduzida / cadeirante
-    </option>
+  <option value="">Selecione uma área</option>
+  <option value="tea">TEA (Transtorno do Espectro Autista)</option>
+  <option value="surdez">Surdez</option>
+  <option value="mobilidade">Mobilidade Reduzida</option>
   </select>
 </div>
 

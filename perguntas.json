@@ -21,17 +21,17 @@
   "perfis": [
     {
       "id": "tea",
-      "nome": "TEA / neurodivergência",
+      "nome": "TEA (Transtorno do Espectro Autista)",
       "descricao": "Ruído, luz, lotação, previsibilidade e espaço de autorregulação."
     },
     {
       "id": "surdez",
-      "nome": "Surdez / Libras",
+      "nome": "Surdez",
       "descricao": "Libras, comunicação escrita, legendas e avisos visuais."
     },
     {
       "id": "mobilidade",
-      "nome": "Mobilidade reduzida / cadeirante",
+      "nome": "Mobilidade reduzida",
       "descricao": "Entrada, circulação, banheiro, assentos e calçada."
     }
   ],
