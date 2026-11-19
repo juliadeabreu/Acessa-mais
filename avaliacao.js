@@ -373,3 +373,16 @@ formularioAvaliacao.addEventListener(
   "submit",
   salvarAvaliacao
 );
+// Garante que "Baixa visão e cegueira" exista na lista de áreas da avaliação.
+(function garantirOpcaoBaixaVisao() {
+  const jaExiste = [...campoPerfilAvaliacao.options].some(
+    opcao => opcao.value === "visual"
+  );
+
+  if (jaExiste) return;
+
+  const opcao = document.createElement("option");
+  opcao.value = "visual";
+  opcao.textContent = "Baixa visão e cegueira";
+  campoPerfilAvaliacao.appendChild(opcao);
+})();

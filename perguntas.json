@@ -33,6 +33,11 @@
       "id": "mobilidade",
       "nome": "Mobilidade reduzida",
       "descricao": "Entrada, circulação, banheiro, assentos e calçada."
+    },
+    {
+      "id": "visual",
+      "nome": "Baixa visão e cegueira",
+      "descricao": "Contraste, iluminação, sinalização, piso tátil, informação em formato acessível e apoio da equipe."
     }
   ],
   "tiposResposta": {
@@ -361,6 +366,66 @@
       "perfil": "mobilidade",
       "texto": "A calçada em frente é plana, com rebaixamento de guia?",
       "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "B1",
+      "perfil": "visual",
+      "texto": "A entrada e as portas são fáceis de identificar (contraste de cor, sem portas de vidro sem marcação)?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "B2",
+      "perfil": "visual",
+      "texto": "A iluminação é adequada, sem áreas muito escuras nem reflexos que ofusquem?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "B3",
+      "perfil": "visual",
+      "texto": "As placas e a sinalização têm letras grandes e bom contraste (ou braille/relevo)?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "B4",
+      "perfil": "visual",
+      "texto": "O cardápio ou as informações estão em formato acessível (letra grande, braille, QR com leitor de tela) ou a equipe lê para você?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "B5",
+      "perfil": "visual",
+      "texto": "Há piso tátil ou outro guia para se orientar do acesso até o atendimento?",
+      "tipo": "sim_parcial_nao_na"
+    },
+    {
+      "id": "B6",
+      "perfil": "visual",
+      "texto": "Os caminhos internos estão livres de obstáculos inesperados (mesas, cadeiras, objetos no caminho ou na altura da cabeça)?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "B7",
+      "perfil": "visual",
+      "texto": "Degraus, escadas e desníveis estão sinalizados (faixa contrastante, piso antiderrapante)?",
+      "tipo": "sim_parcial_nao_na"
+    },
+    {
+      "id": "B8",
+      "perfil": "visual",
+      "texto": "A equipe oferece ajuda, descreve o ambiente e orienta com respeito (perguntando antes de tocar ou conduzir)?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "B9",
+      "perfil": "visual",
+      "texto": "A entrada de cão-guia é permitida e bem recebida?",
+      "tipo": "sim_parcial_nao"
+    },
+    {
+      "id": "B10",
+      "perfil": "visual",
+      "texto": "O pagamento e o atendimento digital são acessíveis (maquininha com teclas em relevo ou voz, site/app compatível com leitor de tela)?",
+      "tipo": "sim_parcial_nao_na"
     }
   ],
   "perguntaFinal": {

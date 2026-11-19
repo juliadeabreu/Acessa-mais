@@ -41,6 +41,7 @@ li small { color: #555; }
   margin-bottom: 1.5rem;
 }
 
+
 .area-mapa {
   min-height: 400px;
   padding: 2rem;
@@ -65,6 +66,7 @@ li small { color: #555; }
   max-width: 420px;
   color: #444;
 }
+
 /* Busca de estabelecimentos */
 
 .busca-local {
@@ -194,6 +196,7 @@ li small { color: #555; }
     height: 350px;
   }
 }
+
 /* Formulário de avaliação */
 
 .campo-avaliacao {
@@ -263,6 +266,7 @@ li small { color: #555; }
 [hidden] {
   display: none !important;
 }
+
 /* Grupo de respostas de cada pergunta */
 
 #form-avaliacao .pergunta-opcoes {
@@ -347,6 +351,7 @@ li small { color: #555; }
   outline: 4px solid #f5a623;
   outline-offset: 3px;
 }
+
 .resumo-comunidade {
   margin: 1rem 0;
   padding: 1rem;
@@ -371,6 +376,7 @@ li small { color: #555; }
 #resultados-comunidade {
   margin-bottom: 1rem;
 }
+
 /* Espaçamento da seção do assistente */
 #assistente-acessa {
   margin-top: 32px;
@@ -414,4 +420,30 @@ li small { color: #555; }
 }
 
 #pergunta-assistente:focus {
-  outline: 3px s
+  outline: 3px solid #f5a623;
+  outline-offset: 2px;
+  border-color: #1b4f72;
+}
+
+/* Seção "Outros" (em desenvolvimento) */
+.card-em-breve {
+  cursor: not-allowed;
+  background: #eef2f5;
+  border-style: dashed;
+  color: #4a5a66;
+}
+
+.card-em-breve:hover {
+  border-color: #c9d6df;
+}
+
+.selo-em-breve {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #5a3d00;
+  background: #fde8b8;
+  border-radius: 999px;
+}

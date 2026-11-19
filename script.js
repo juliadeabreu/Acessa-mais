@@ -28,7 +28,8 @@ function renderPerfis() {
       <input type="checkbox" name="perfil" value="${p.id}" ${salvos.includes(p.id) ? "checked" : ""}>
       <strong>${p.nome}</strong>
       <span>${p.descricao}</span>
-      <span class="marca">✔ Selecionado</span>`;
+      <span class="marca">✔ Selecionado</span>
+    `;
     alvo.appendChild(label);
   });
 
@@ -38,8 +39,20 @@ function renderPerfis() {
     <input type="checkbox" id="perfil-nenhum" name="perfil-nenhum" ${nenhumMarcado ? "checked" : ""}>
     <strong>Nenhuma dessas</strong>
     <span>Vou contribuir como visitante, sem representar uma dessas necessidades.</span>
-    <span class="marca">✔ Selecionado</span>`;
+    <span class="marca">✔ Selecionado</span>
+  `;
   alvo.appendChild(nenhum);
+
+  // Seção "Outros" (ainda em desenvolvimento): não é selecionável.
+  const outros = document.createElement("div");
+  outros.className = "card card-em-breve";
+  outros.setAttribute("aria-disabled", "true");
+  outros.innerHTML = `
+    <strong>Outros</strong>
+    <span>Outras necessidades de acessibilidade, como idosos, gestantes e deficiência intelectual.</span>
+    <span class="selo-em-breve">Em desenvolvimento</span>
+  `;
+  alvo.appendChild(outros);
 
   // "Nenhuma dessas" não pode ficar marcada junto com os outros perfis.
   alvo.onchange = evento => {
@@ -47,7 +60,9 @@ function renderPerfis() {
     const caixaNenhum = document.getElementById("perfil-nenhum");
 
     if (campo.id === "perfil-nenhum" && campo.checked) {
-      alvo.querySelectorAll('input[name="perfil"]').forEach(i => { i.checked = false; });
+      alvo.querySelectorAll('input[name="perfil"]').forEach(i => {
+        i.checked = false;
+      });
     } else if (campo.name === "perfil" && campo.checked) {
       caixaNenhum.checked = false;
     }
