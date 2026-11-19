@@ -149,6 +149,64 @@
     Atualizar avaliações
   </button>
 </section>
+<!-- Assistente de inteligência artificial -->
+<section id="assistente-acessa" aria-labelledby="titulo-assistente">
+  <h3 id="titulo-assistente">Pergunte ao assistente do Acessa+</h3>
+
+  <p>
+    Tire suas dúvidas sobre a acessibilidade deste local.
+    O assistente responde com base nas avaliações compartilhadas
+    no Acessa+, sem consultar avaliações do Google Maps.
+  </p>
+
+  <form id="form-assistente">
+    <label for="pergunta-assistente">
+      O que você gostaria de saber sobre este local?
+    </label>
+
+    <textarea
+      id="pergunta-assistente"
+      name="pergunta"
+      rows="3"
+      placeholder="Exemplo: o que as avaliações dizem sobre a entrada do local?"
+      aria-describedby="ajuda-assistente"
+      required
+    ></textarea>
+
+    <p id="ajuda-assistente">
+      Enter envia a pergunta. Shift + Enter cria uma nova linha.
+    </p>
+
+    <button
+      id="btn-assistente"
+      type="submit"
+      class="botao"
+    >
+      Perguntar ao assistente
+    </button>
+  </form>
+
+  <p
+    id="status-assistente"
+    role="status"
+    aria-live="polite"
+  ></p>
+
+  <div
+    id="resposta-assistente"
+    aria-live="polite"
+  ></div>
+
+  <details id="detalhes-fontes-assistente" hidden>
+    <summary>Avaliações usadas na resposta</summary>
+    <ul id="fontes-assistente"></ul>
+  </details>
+
+  <p class="aviso-prototipo">
+    A inteligência artificial pode cometer erros. Confira as referências.
+    A ausência de relatos sobre uma barreira não garante que ela não exista.
+  </p>
+</section>
 
 <div class="campo-avaliacao">
   <label for="perfil-avaliacao">
@@ -255,6 +313,7 @@
 <script src="maps.js"></script>
 <script src="script.js"></script>
 <script src="avaliacao.js"></script>
+<script src="ia.js"></script>
 <script src="menu.js" defer></script>
 </body>
 </html>

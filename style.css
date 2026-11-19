@@ -447,3 +447,72 @@ li small { color: #555; }
   background: #fde8b8;
   border-radius: 999px;
 }
+/* Assistente de IA */
+#assistente-acessa {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #dce4e8;
+}
+
+#titulo-assistente {
+  margin: 0 0 16px;
+  color: #1b4f72;
+}
+
+#form-assistente label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+#pergunta-assistente {
+  display: block;
+  width: 100%;
+  min-height: 100px;
+  padding: 12px 14px;
+
+  font: inherit;
+  line-height: 1.5;
+  color: #222;
+  background: #fff;
+
+  border: 2px solid #61788a;
+  border-radius: 10px;
+  resize: vertical;
+}
+
+#pergunta-assistente:focus-visible {
+  outline: 4px solid #f5a623;
+  outline-offset: 2px;
+  border-color: #1b4f72;
+}
+
+#ajuda-assistente {
+  margin: 8px 0 16px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+#status-assistente {
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+#resposta-assistente {
+  margin: 16px 0;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+#resposta-assistente:not(:empty) {
+  padding: 16px;
+  background: #f1f6fa;
+  border: 1px solid #bdcdd9;
+  border-radius: 10px;
+}
+
+#fontes-assistente {
+  overflow-wrap: anywhere;
+}
