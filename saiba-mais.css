@@ -1,0 +1,97 @@
+.saiba-mais {
+  max-width: 820px;
+}
+
+.saiba-mais .intro {
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Bloco com foto */
+.bloco-foto {
+  margin: 4rem 0;
+}
+
+.bloco-foto h2 {
+  font-size: 1.7rem;
+  margin: 0 0 0.75rem;
+  color: #1b4f72;
+}
+
+.bloco-foto p {
+  font-size: 1.1rem;
+  margin: 0 0 1.25rem;
+}
+
+.bloco-foto figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e8eef3;
+  box-shadow: 0 12px 32px rgba(27, 79, 114, 0.18);
+}
+
+.bloco-foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(1.12);
+  transition: transform 1.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.bloco-foto figcaption {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: #444;
+  background: #fff;
+}
+
+/* Efeito: sobe e aparece aos poucos (só quando o JavaScript está ativo) */
+.js .revelar {
+  opacity: 0;
+  transform: translateY(56px) scale(0.97);
+  transition: opacity 0.9s ease,
+              transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.js .revelar.visivel {
+  opacity: 1;
+  transform: none;
+}
+
+.js .revelar.visivel img {
+  transform: scale(1);
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .js .revelar,
+  .js .revelar.visivel {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .bloco-foto img {
+    transform: none;
+    transition: none;
+  }
+}
+
+.saiba-mais .fontes {
+  font-size: 0.95rem;
+}
+
+.saiba-mais a {
+  color: #0b4fa3;
+}
+
+.saiba-mais a:focus-visible {
+  outline: 3px solid #f2a900;
+  outline-offset: 2px;
+}
+/* Frases em destaque */
+.destaque {
+  font-weight: 700;
+  color: #1b4f72;
+}
