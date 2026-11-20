@@ -516,3 +516,172 @@ li small { color: #555; }
 #fontes-assistente {
   overflow-wrap: anywhere;
 }
+/* ===== Painel de acessibilidade ===== */
+
+.faixa-boa { --cor: #2e8b57; }
+.faixa-parcial { --cor: #b36b00; }
+.faixa-baixa { --cor: #a61b1b; }
+
+.rotulo-faixa {
+  margin: 0.25rem 0;
+  font-weight: 700;
+  color: var(--cor);
+}
+
+.aviso-cautela {
+  margin: 0.5rem 0;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  color: #5a3d00;
+  background: #fde8b8;
+  border-radius: 6px;
+}
+
+/* Rosca */
+.rosca { display: block; }
+.rosca.grande { width: 170px; height: 170px; }
+.rosca.pequena { width: 110px; height: 110px; margin: 0 auto; }
+
+.rosca-fundo {
+  fill: none;
+  stroke: #dbe5ec;
+  stroke-width: 12;
+}
+
+.rosca-barra {
+  fill: none;
+  stroke: var(--cor);
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.rosca-texto {
+  font-size: 26px;
+  font-weight: 700;
+  fill: #123b56;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+/* Índice geral */
+.painel-geral {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: #fff;
+  border: 2px solid #1b4f72;
+  border-radius: 14px;
+}
+
+.painel-geral h4 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  color: #1b4f72;
+}
+
+.geral-corpo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.geral-textos { flex: 1; min-width: 220px; }
+.geral-textos p { margin: 0.35rem 0; }
+
+/* Gráficos pequenos */
+.titulo-por-tipo {
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1.1rem;
+  color: #1b4f72;
+}
+
+.grade-mini {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
+}
+
+.mini-grafico {
+  padding: 1rem;
+  text-align: center;
+  background: #f1f6fa;
+  border: 1px solid #bdcdd9;
+  border-radius: 12px;
+}
+
+.mini-grafico h5 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  color: #1b4f72;
+}
+
+.legenda-mini {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.sem-avaliacoes {
+  margin: 1rem 0;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Setinhas (detalhes) */
+.detalhes-painel {
+  margin-top: 0.75rem;
+  text-align: left;
+}
+
+.detalhes-painel summary:focus-visible {
+  outline: 4px solid #f5a623;
+  outline-offset: 2px;
+}
+
+.lista-perguntas {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item-pergunta {
+  margin-bottom: 1rem;
+}
+
+.texto-pergunta {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.legenda-pergunta {
+  display: block;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.barra-trilho {
+  height: 10px;
+  margin: 0.35rem 0;
+  overflow: hidden;
+  background: #dbe5ec;
+  border-radius: 999px;
+}
+
+.barra-preenchimento {
+  height: 100%;
+  background: var(--cor);
+  border-radius: 999px;
+}
+/* Avaliações por perfil: um cartão abaixo do outro */
+.grade-mini {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.grade-mini .mini-grafico {
+  width: 100%;
+  min-width: 0;
+}
